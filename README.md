@@ -25,6 +25,7 @@ panel and the gated-pricing block.
 
     assets/site.css         Shared stylesheet — every token and component
     assets/product-*.jpg    Product photography used by the CSS
+    assets/source/          The full-resolution master the crops come from
 
 ## Look
 
@@ -37,6 +38,15 @@ Product imagery is real photography, referenced from `site.css` as custom
 properties (`--shot-hero` and friends). Those `url()` values are relative to
 the stylesheet, so `url("product-hero.jpg")` resolves to
 `assets/product-hero.jpg`.
+
+The four JPEGs are crops of one master shot, kept at
+`assets/source/packaging-master.png` so they can be recut without going back
+for the original. Each crop has a fixed job: `product-card.jpg` is the whole
+shot at 2:3 and is used with `background-size:contain`, so it is never
+cropped further; `product-pack.jpg` is the carton and vial together;
+`product-vial.jpg` is the vial detail; `product-hero.jpg` is a landscape band
+across both labels. Swapping the photography means recutting those four at
+the same sizes — no stylesheet change needed.
 
 ## Application form
 
